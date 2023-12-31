@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+// 리액트 컴포넌트는 부모 컴포넌트가 리렌더링되면 자식 컴포넌트도 리렌더링된다.
+// 자식 컴포넌트의 props나 state에 변경사항이 있었느냐는 무관하다.
+// https://velog.io/@mogulist/understanding-react-rerender-easily
+
 function Square({ value, onSquareClick }) {
   return (
     <button className="square" onClick={onSquareClick}>
@@ -88,6 +92,7 @@ export default function Game() {
   }
 
   function jumpTo(nextMove) {
+    // state인 currentMove를 변경할 경우 Game 컴포넌트가 다시 랜더링된다.
     setCurrentMove(nextMove);
   }
 
@@ -108,6 +113,7 @@ export default function Game() {
   return (
     <div className="game">
       <div className="game-board">
+        {/* 부모 컴포넌트인 Game이 리렌더링되면 자식 컴포넌트인 Board 또한 리렌더링 된다.*/}
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
