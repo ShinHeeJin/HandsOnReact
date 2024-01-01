@@ -13,29 +13,18 @@ function Square({ value, onSquareClick }) {
 }
 
 function Board({ xIsNext, squares, onPlay }) {
-  function handleClick(i) {
-    if (squares[i] || calculateWinner(squares)) {
-      return;
-    }
+  function handleClick(idx) {
+    if (squares[idx] !== "-" || calculateWinner(squares)) return;
 
-    const nextSquares = squares.slice(); // create copy of the squares array
-
-    if (xIsNext) {
-      nextSquares[i] = "X";
-    } else {
-      nextSquares[i] = "O";
-    }
-
+    const nextSquares = squares.slice();
+    nextSquares[idx] = xIsNext ? "X" : "O";
     onPlay(nextSquares);
   }
 
   const winner = calculateWinner(squares);
-  let status;
-  if (winner) {
-    status = "Winner : " + winner;
-  } else {
-    status = "Next Player : " + (xIsNext ? "X" : "O");
-  }
+  let status = winner
+    ? "Winner : " + winner
+    : "Next Player : " + (xIsNext ? "X" : "O");
 
   return (
     <>
@@ -58,6 +47,7 @@ function Board({ xIsNext, squares, onPlay }) {
     </>
   );
 }
+
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
@@ -72,7 +62,11 @@ function calculateWinner(squares) {
 
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+    if (
+      squares[a] !== "-" &&
+      squares[a] === squares[b] &&
+      squares[a] === squares[c]
+    ) {
       return squares[a];
     }
   }
@@ -80,32 +74,28 @@ function calculateWinner(squares) {
 }
 
 export default function Game() {
-  const [history, setHistory] = useState([Array(9).fill(null)]);
-  const [currentMove, setCurrentMove] = useState(0);
-  const xIsNext = currentMove % 2 === 0;
-  const currentSquares = history[currentMove];
+  const [history, setHistory] = useState([Array(9).fill("-")]);
+  const [currentMoveIdx, setCurrentMoveIdx] = useState(0);
+  const xIsNext = currentMoveIdx % 2 === 0;
+  const currentSquares = history[currentMoveIdx];
+
+  function jumpTo(moveIdx) {
+    setCurrentMoveIdx(moveIdx);
+  }
 
   function handlePlay(nextSquares) {
-    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+    const nextHistory = [...history.slice(0, currentMoveIdx + 1), nextSquares];
     setHistory(nextHistory);
-    setCurrentMove(nextHistory.length - 1);
+    setCurrentMoveIdx(nextHistory.length - 1);
   }
 
-  function jumpTo(nextMove) {
-    // state인 currentMove를 변경할 경우 Game 컴포넌트가 다시 랜더링된다.
-    setCurrentMove(nextMove);
-  }
+  const moves = history.map((squares, moveIdx) => {
+    let description =
+      moveIdx >= 1 ? "Go to move # " + moveIdx : "Go to game start";
 
-  const moves = history.map((squares, move) => {
-    let description;
-    if (move > 0) {
-      description = "Go to move #" + move;
-    } else {
-      description = "Go to game start";
-    }
     return (
-      <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+      <li key={moveIdx}>
+        <button onClick={() => jumpTo(moveIdx)}>{description}</button>
       </li>
     );
   });
