@@ -139,3 +139,20 @@ const printFormattedNum = (num) => {
 printFormattedNum(1300); // 1,300
 printFormattedNum("1300"); // 숫자를 입력하십시오
 ```
+
+### 논리연산자의 원래의미
+
+| | : 연산자의 왼쪽이 true라면 왼쪽을 반환, 왼쪽이 false라고 판정하면 오른쪽을 반환
+&& : 연산자의 왼쪽이 왼쪽이 true라면 오른쪽을 반환, false라고 판정하면 왼쪽을 반환
+
+```javascript
+console.log(100 || "test"); // 100
+console.log("test" || 100); // test
+console.log(100 && "test"); // test
+console.log("test" && 100); // 100
+console.log(false && "test"); // false
+
+// falsy : 0, ""
+// truthy : [], {}
+// nullish : null, undefined
+```
