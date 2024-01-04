@@ -10,6 +10,7 @@
 
 - 아래 구조에서 App의 state가 변경됨에 모든 컴포넌트가 재렌더링 되는데 App이외의 컴포넌트는 화면표시가 변하는 요소가 없다면 재렌더링 되지 않아도 되므로 재렌더링 되지 않도록 제어한다.
   ![Alt text](image.png)
+  <출처 : [모던 자바스크립트로 배우는 리액트 입문](https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000005029039)>
 
 ### React.memo
 
