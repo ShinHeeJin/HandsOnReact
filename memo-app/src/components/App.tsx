@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useCallback, useState } from "react";
 import { styled } from "styled-components";
 import { MemoList } from "./MemoList";
 
@@ -17,12 +17,15 @@ export const App: FC = () => {
     setText("");
   };
 
-  const onClickDelete = (index: number) => {
-    const newMemos = [...memos];
-    newMemos.splice(index, 1);
-    setMemos(newMemos);
-    setText("");
-  };
+  const onClickDelete = useCallback(
+    (index: number) => {
+      const newMemos = [...memos];
+      newMemos.splice(index, 1);
+      setMemos(newMemos);
+      setText("");
+    },
+    [memos]
+  );
 
   return (
     <div>
