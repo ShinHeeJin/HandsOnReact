@@ -1,5 +1,6 @@
 import { ChangeEvent, FC, useState } from "react";
 import { styled } from "styled-components";
+import { MemoList } from "./MemoList";
 
 export const App: FC = () => {
   const [text, setText] = useState<string>("");
@@ -28,34 +29,11 @@ export const App: FC = () => {
       <h1>간단한 메모 애플리케이션</h1>
       <input type="text" value={text} onChange={onChangeText} />
       <SButton onClick={onClickAdd}>추가</SButton>
-      <SContainer>
-        <p>메모 목록</p>
-        <ul>
-          {memos.map((memo, index) => (
-            <li key={index}>
-              <SMemoWrapper>
-                <p>{memo}</p>
-                <SButton onClick={() => onClickDelete(index)}>삭제 </SButton>
-              </SMemoWrapper>
-            </li>
-          ))}
-        </ul>
-      </SContainer>
+      <MemoList memos={memos} onClickDelete={onClickDelete}></MemoList>
     </div>
   );
 };
 
 const SButton = styled.button`
   margin-left: 16px;
-`;
-
-const SContainer = styled.div`
-  border: solid 1px #ccc;
-  padding: 16px;
-  margin: 8px;
-`;
-
-const SMemoWrapper = styled.div`
-  display: flex;
-  align-items: center;
 `;
