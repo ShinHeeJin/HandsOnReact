@@ -7,7 +7,7 @@
 - 확장자 변경 : js -> ts, jsx -> tsx
 - 타입스크립트 프로젝트 옵션
   ```bash
-  npm create-react-app [프로젝트명] --template typescript
+  npx create-react-app [프로젝트명] --template typescript
   ```
 
 ### 변수 선언예시
