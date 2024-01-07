@@ -8,11 +8,12 @@ import CommentList from "./chapter_05/CommentList";
 import NotificationList from "./chapter_06/NotificationList";
 import Acommodate from "./chapter_07/Acommodate";
 import ConfirmButton from "./chapter_08/ConfirmButton";
+import MyButton from "./chapter_08/MyButton";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ConfirmButton />
+    <MyButton />
   </React.StrictMode>
 );
 
