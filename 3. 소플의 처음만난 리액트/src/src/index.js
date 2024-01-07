@@ -6,15 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 import Clock from "./chapter_04/Clock";
 import CommentList from "./chapter_05/CommentList";
 import NotificationList from "./chapter_06/NotificationList";
+import Acommodate from "./chapter_07/Acommodate";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-setInterval(() => {
-  root.render(
-    <React.StrictMode>
-      <NotificationList />
-    </React.StrictMode>
-  );
-}, 1000);
+root.render(
+  <React.StrictMode>
+    <Acommodate />
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
