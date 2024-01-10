@@ -10,11 +10,12 @@ import Acommodate from "./chapter_07/Acommodate";
 import ConfirmButton from "./chapter_08/ConfirmButton";
 import MyButton from "./chapter_08/MyButton";
 import LandingPage from "./chapter_09/LandingPage";
+import AttendanceBook from "./chapter_10/AttendanceBook";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <LandingPage />
+    <AttendanceBook />
   </React.StrictMode>
 );
 
