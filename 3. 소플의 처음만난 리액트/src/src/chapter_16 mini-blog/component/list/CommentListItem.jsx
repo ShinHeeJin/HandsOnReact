@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  border: 1px solid center;
+  border: 1px solid grey;
   border-radius: 8px;
   cursor: pointer;
   background: white;
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const ContextText = styled.p`
+const ContentText = styled.p`
   font-size: 16px;
   white-space: pre-wrap;
 `;
@@ -27,7 +27,7 @@ export default function CommentListItem(props) {
 
   return (
     <Wrapper>
-      <ContextText>{comment.content}</ContextText>
+      <ContentText>{comment.content}</ContentText>
     </Wrapper>
   );
 }

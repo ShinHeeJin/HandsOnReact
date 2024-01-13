@@ -21,7 +21,6 @@ export default function CommentList(props) {
       {comments.map((comment, index) => {
         return <CommentListItem key={comment.id} comment={comment} />;
       })}
-      ;
     </Wrapper>
   );
 }

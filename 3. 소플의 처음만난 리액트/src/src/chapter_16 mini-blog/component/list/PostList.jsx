@@ -18,7 +18,7 @@ export default function PostList(props) {
 
   return (
     <Wrapper>
-      {posts.map((post, index) => {
+      {posts.map((post) => {
         return (
           <PostListItem
             key={post.id}

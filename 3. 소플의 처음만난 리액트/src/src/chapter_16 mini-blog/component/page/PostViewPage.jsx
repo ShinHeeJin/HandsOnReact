@@ -24,7 +24,7 @@ const Container = styled.div`
   }
 `;
 
-const PostConainer = styled.div`
+const PostContainer = styled.div`
   padding: 8px 16px;
   border: 1px solid grey;
   border-radius: 8px;
@@ -51,9 +51,8 @@ export default function PostViewPage(props) {
   const { postId } = useParams();
 
   const post = data.find((item) => {
-    return item.id === postId;
+    return item.id === Number(postId);
   });
-
   const [comment, setComment] = useState("");
 
   return (
@@ -65,10 +64,10 @@ export default function PostViewPage(props) {
             navigate("/");
           }}
         />
-        <PostConainer>
+        <PostContainer>
           <TitleText>{post.title}</TitleText>
           <ContentText>{post.content}</ContentText>
-        </PostConainer>
+        </PostContainer>
 
         <CommentLabel>댓글</CommentLabel>
         <CommentList comments={post.comments} />
