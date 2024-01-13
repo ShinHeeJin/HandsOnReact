@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Clock from "./chapter_04/Clock";
 import CommentList from "./chapter_05/CommentList";
@@ -16,11 +15,12 @@ import Calculator from "./chapter_12/Calcuator";
 import ProfileCard from "./chapter_13/ProfileCard";
 import DarkOrLight from "./chapter_14/DarkOrLight";
 import Blocks from "./chapter_15/Blocks";
+import App from "./chapter_16 mini-blog/App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Blocks />
+    <App />
   </React.StrictMode>
 );
 
