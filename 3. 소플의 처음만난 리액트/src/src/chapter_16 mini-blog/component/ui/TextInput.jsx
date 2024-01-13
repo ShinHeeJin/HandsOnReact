@@ -9,7 +9,7 @@ const StyledTextarea = styled.textarea`
   line-height: 20px;
 `;
 
-function TextInput(props) {
+export default function TextInput(props) {
   const { height, value, onChange } = props;
   // 변경된 값을 상위 컴포넌트로 전달하기 위한 onChange
 
