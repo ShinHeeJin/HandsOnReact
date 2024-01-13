@@ -22,7 +22,7 @@ const ContextText = styled.p`
   white-space: pre-wrap;
 `;
 
-function CommentListItem(props) {
+export default function CommentListItem(props) {
   const { comment } = props;
 
   return (
