@@ -31,19 +31,19 @@ const PostContainer = styled.div`
 `;
 
 const TitleText = styled.p`
-  font-size: 28px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: bold;
 `;
 
 const ContentText = styled.p`
   font-size: 20px;
   line-height: 32px;
-  white-space: pre-wrap;
+  white-space: pre-line;
 `;
 
 const CommentLabel = styled.p`
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 export default function PostViewPage(props) {
