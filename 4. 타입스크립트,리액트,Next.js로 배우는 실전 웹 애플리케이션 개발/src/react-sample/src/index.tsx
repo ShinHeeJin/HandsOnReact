@@ -4,13 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Hello from "./components/Hello";
+import Parent from "./components/ContainerSample";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Hello />
+    <Parent />
   </React.StrictMode>
 );
 
