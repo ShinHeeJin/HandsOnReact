@@ -5,13 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Hello from "./components/Hello";
 import Parent from "./components/ContainerSample";
+import Page from "./components/ContextSample";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Parent />
+    <Page />
   </React.StrictMode>
 );
 
