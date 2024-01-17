@@ -36,3 +36,4 @@ $ npx create-react-app@latest react-sample --template typescript
   - 컴포넌트 안에서 참조하는 Context값이 업데이트 됬을 때
   - 부모 컴포넌트가 다시 그려졌을 때
     - 메모이제이션은 부모가 재렌더링 되어도 props나 context값이 바뀌지 않는 이상 자식컴포넌트의 재렌더링이 일어나지 않게 한다.
+- useCallback : 함수를 메모이제이션 하기 위한 훅
