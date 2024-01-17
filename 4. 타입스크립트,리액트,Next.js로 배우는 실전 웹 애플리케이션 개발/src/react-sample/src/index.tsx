@@ -7,13 +7,14 @@ import Hello from "./components/Hello";
 import Parent from "./components/ContainerSample";
 import Page from "./components/ContextSample";
 import CounterSample from "./components/CounterSample";
+import Counter from "./components/UseReducerSample";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <CounterSample initValue={0} />
+    <Counter initValue={0} />
   </React.StrictMode>
 );
 
