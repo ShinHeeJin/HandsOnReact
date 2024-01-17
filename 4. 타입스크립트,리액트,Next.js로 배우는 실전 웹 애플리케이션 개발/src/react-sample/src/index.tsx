@@ -8,13 +8,14 @@ import Parent from "./components/ContainerSample";
 import Page from "./components/ContextSample";
 import CounterSample from "./components/CounterSample";
 import Counter from "./components/UseReducerSample";
+import ParentMemo from "./components/Parent";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Counter initValue={0} />
+    <ParentMemo />
   </React.StrictMode>
 );
 
