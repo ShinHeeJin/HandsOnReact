@@ -30,6 +30,7 @@ $ npx create-react-app@latest react-sample --template typescript
 
 - 메모이제이션용 훅
 - 불필요한 자식 요소의 렌더링이나 계산을 억제하기 위해 사용
+- memo()로 컴포넌트를 메모이제이션 하더라도 컴포넌트에 객체나 함수를 전달하면 부모의 컴포넌트가 재렌더링 되면 자식도 어쩔 수 없이 다시 렌더링 되게된다. 이때 사용하는 것이 useMemo(객체), useCallback(함수))
 - 재렌더링 조건
   - props나 내부 state가 업데이트 되었을 때
   - 컴포넌트 안에서 참조하는 Context값이 업데이트 됬을 때

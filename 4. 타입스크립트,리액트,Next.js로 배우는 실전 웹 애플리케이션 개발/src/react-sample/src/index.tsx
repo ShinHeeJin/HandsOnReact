@@ -8,16 +8,13 @@ import Parent from "./components/ContainerSample";
 import Page from "./components/ContextSample";
 import CounterSample from "./components/CounterSample";
 import Counter from "./components/UseReducerSample";
-import ParentMemo from "./components/Parent";
+import ParentMemo from "./components/ParentMemo";
+import ParentMemo2 from "./components/ParentMemo2";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(
-  <React.StrictMode>
-    <ParentMemo />
-  </React.StrictMode>
-);
+root.render(<ParentMemo2 />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
