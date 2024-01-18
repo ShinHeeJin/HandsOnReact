@@ -11,11 +11,12 @@ import Counter from "./components/UseReducerSample";
 import ParentMemo from "./components/ParentMemo";
 import ParentMemo2 from "./components/ParentMemo2";
 import UseCallbackSample from "./components/UseCallbackSample";
+import UseMemoSample from "./components/UseMemoSample";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(<UseCallbackSample />);
+root.render(<UseMemoSample />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
