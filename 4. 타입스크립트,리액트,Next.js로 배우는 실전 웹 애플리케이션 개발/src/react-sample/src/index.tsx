@@ -13,11 +13,12 @@ import ParentMemo2 from "./components/ParentMemo2";
 import UseCallbackSample from "./components/UseCallbackSample";
 import UseMemoSample from "./components/UseMemoSample";
 import Clock from "./components/Clock";
+import UseContextExampleParent from "./components/UseContextExample";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(<Clock />);
+root.render(<UseContextExampleParent />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
