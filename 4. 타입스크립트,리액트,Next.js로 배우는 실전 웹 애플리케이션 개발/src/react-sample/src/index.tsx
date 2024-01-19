@@ -15,11 +15,12 @@ import UseMemoSample from "./components/UseMemoSample";
 import Clock from "./components/Clock";
 import UseContextExampleParent from "./components/UseContextExample";
 import ImageUpload from "./components/UseRefExample";
+import Input from "./components/CustomHookExample";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(<ImageUpload />);
+root.render(<Input />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
