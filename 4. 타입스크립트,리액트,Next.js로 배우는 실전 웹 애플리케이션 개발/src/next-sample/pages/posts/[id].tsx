@@ -2,12 +2,18 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router"; // next/router의 훅
 import { ParsedUrlQuery } from "querystring";
+import { useEffect } from "react";
 
 type PostProps = { id: string };
 
 const Post: NextPage<PostProps> = (props) => {
   const { id } = props;
   const router = useRouter();
+
+  // /userrouter로 이동하게 된다.
+  // useEffect(() => {
+  //   router.push("/userouter");
+  // });
 
   if (router.isFallback) {
     return <div>Loading ...</div>;
