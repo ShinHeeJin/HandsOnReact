@@ -1,4 +1,4 @@
-import { ComponentMeta } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import { StyledButton } from "../components/StyledButton";
 import { action } from "@storybook/addon-actions";
 import { useState } from "react";
@@ -7,7 +7,7 @@ export default {
   title: "StyledButton (1)",
   component: StyledButton,
   argTypes: { onClick: { action: "clicked" } },
-} as ComponentMeta<typeof StyledButton>;
+} as Meta<typeof StyledButton>;
 
 const incrementAction = action("increment");
 
