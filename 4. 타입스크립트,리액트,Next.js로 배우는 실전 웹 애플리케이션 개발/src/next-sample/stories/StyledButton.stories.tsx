@@ -15,12 +15,12 @@ export const Primary = (props) => {
   const [count, setCount] = useState(0);
 
   const onClick = (e: React.MouseEvent) => {
-    incrementAction(e, count);
+    incrementAction(e, count); // 임의의 데이터를 actions에 표시하고 싶을 때
     setCount((c) => c + 1);
   };
   return (
     <StyledButton {...props} variant="primary" onClick={onClick}>
-      Primary
+      Primary, Count : {count}
     </StyledButton>
   );
 };
@@ -28,7 +28,7 @@ export const Primary = (props) => {
 export const Success = (props) => {
   return (
     <StyledButton {...props} variant="success">
-      Primary
+      Success
     </StyledButton>
   );
 };
