@@ -9,6 +9,23 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    viewport: {
+      viewports: {
+        name: "iPhone X",
+        styles: {
+          width: "375px",
+          height: "812px",
+        },
+      },
+      backgrounds: {
+        values: [
+          {
+            name: "grey",
+            value: "#808080",
+          },
+        ],
+      },
+    },
   },
 };
 
