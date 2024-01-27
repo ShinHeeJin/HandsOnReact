@@ -1,5 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react";
 import { StyledButton } from "../components/StyledButton";
+import { linkTo } from "@storybook/addon-links";
 
 export default {
   title: "StyledButton",
@@ -16,7 +17,7 @@ export default {
 } as Meta<typeof StyledButton>;
 
 const Template: StoryFn<typeof StyledButton> = (args) => (
-  <StyledButton {...args} />
+  <StyledButton {...args} onClick={linkTo("StyledButton", "Success")} />
 );
 
 export const TemplateTest = Template.bind({});
